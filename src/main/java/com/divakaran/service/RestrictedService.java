@@ -10,8 +10,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class RestrictedService {
 
-    private static final String MY_GROUP = "https://api.stormpath.com/v1/groups/174vbJOGSi0pRnWZvBCzHP";
-
     @PreAuthorize("hasAuthority(@groups.ADMIN)")
     public String validateUser(Account account) {
         String message = "Hello, " + account.getFullName() +

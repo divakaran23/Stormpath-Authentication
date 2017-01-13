@@ -13,11 +13,13 @@ public class Groups {
 
     public final String ADMIN;
 
-    @Value("${stormpath.authorized.group.admin}")
-    private String groupUrl;
-
     @Autowired
     public Groups(Environment environment) {
-        ADMIN = groupUrl;
+        ADMIN = environment.getProperty("stormpath.authorized.group.admin");
     }
+
+//    @Autowired
+//    public Groups(@Value("${stormpath.authorized.group.admin}") String groupUrl) {
+//        ADMIN = groupUrl;
+//    }
 }
