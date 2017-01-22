@@ -8,6 +8,13 @@
 <body>
 <h2 th:inline="text">Hello!</h2>
 
-<a th:href="@{/logout}">Logout</a>
+<div th:if="${account}">
+    <form id="logoutForm" th:action="@{/logout}" method="post">
+        <input type="submit" class="btn btn-danger" value="Logout"/>
+    </form>
+</div>
+<div th:unless="${account}">
+    <a th:href="@{/login}">Login</a>
+</div>
 </body>
 </html>

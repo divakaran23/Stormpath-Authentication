@@ -8,5 +8,10 @@
 <body>
 <h2 th:inline="text">Hello World!</h2>
 <h4 th:inline="text">[[${message}]]</h4>
+<div th:if="${account}">
+    <form id="logoutForm" th:action="@{/logout}" method="post">
+        <input type="submit" class="btn btn-danger" value="Logout"/>
+    </form>
+</div>
 </body>
 </html>

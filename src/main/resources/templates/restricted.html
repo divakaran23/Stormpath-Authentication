@@ -8,6 +8,10 @@
 <body>
 <h2 th:inline="text">Hello, [[${accountName}]]!</h2>
 
-<a th:href="@{/logout}">Logout</a>
+<div th:if="${account}">
+    <form id="logoutForm" th:action="@{/logout}" method="post">
+        <input type="submit" class="btn btn-danger" value="Logout"/>
+    </form>
+</div>
 </body>
 </html>
