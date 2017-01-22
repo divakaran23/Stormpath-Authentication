@@ -44,4 +44,9 @@ public class HomeController {
         return "hello";
     }
 
+    @RequestMapping(value = "userDetails", method = RequestMethod.GET)
+    public String getUserDetails() {
+        return "userDetails";
+    }
+
 }
